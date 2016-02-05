@@ -26,9 +26,9 @@ class Words {
 
 
 //: ## Q2: Variable Types and Function Types
-    func arePalindromes(words: [String]) -> Bool {
+    static func arePalindromes(words: [String]) -> Bool {
         let reversedWords = words.map() {String($0.characters.reverse())}
-        var numElements = words.count
+        let numElements = words.count
         
         for var i = 0; i < numElements; i++ {
             if words[i] != reversedWords[i] {
@@ -49,8 +49,8 @@ class Words {
 //: ## Q3: More Functions and Object Initialization
     func isAnagram() -> Bool {
         var countLetters : [Character : Int] = [Character : Int]()//Line X
-        var lenA = self.wordA.characters.count
-        var lenB = self.wordB.characters.count
+        let lenA = self.wordA.characters.count
+        let lenB = self.wordB.characters.count
         
         if lenA != lenB {
             return false
@@ -77,7 +77,7 @@ class Words {
             }
         }
         
-        for (letter, count) in countLetters {
+        for (_, count) in countLetters {
             if count != 0 {
                 return false
             }
